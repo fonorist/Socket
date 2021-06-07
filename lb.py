@@ -20,7 +20,6 @@ def main():
                         print(connection_address)
                         message = connection_socket.recv(1024)
                         print(message)
-                        print(message.encrypt())
                         client_socket1.send(message)
                         answer = client_socket1.recv(1024)
                         print(answer)
