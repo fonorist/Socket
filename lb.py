@@ -13,14 +13,16 @@ def main():
                     client_socket2.connect(('192.168.0.102', 80))
                     client_socket3.connect(('192.168.0.103', 80))
                     with socket.socket() as server_socket:
-                        server_socket.bind(('10.0.0.0', 80))
+                        server_socket.bind(('10.0.0.1', 80))
                         server_socket.listen(5)
                         connection_socket, connection_address = server_socket.accept()
                         print(connection_socket)
                         print(connection_address)
                         message = connection_socket.recv(1024)
+                        print(message)
                         client_socket1.send(message)
                         answer = client_socket1.recv(1024)
+                        print(answer)
                         server_socket.send(answer)
                     # message_to_send = 'M1'
                     # client_socket1.send(message_to_send.encode())
