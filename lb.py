@@ -16,9 +16,10 @@ def main():
                         server_socket.bind(('10.0.0.0', 80))
                         server_socket.listen(5)
                         connection_socket, connection_address = server_socket.accept()
-                        message = connection_socket.recv(2)
+                        print(f'connection_socket = {connection_socket}, connection_address = {connection_address}')
+                        message = connection_socket.recv(1024)
                         client_socket1.send(message)
-                        answer = client_socket1.recv(2)
+                        answer = client_socket1.recv(1024)
                         server_socket.send(answer)
                     # message_to_send = 'M1'
                     # client_socket1.send(message_to_send.encode())
