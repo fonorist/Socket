@@ -2,6 +2,7 @@ import socket
 
 
 def main():
+    print('ebati moi hui')
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0) as client_socket:
         try:
             client_socket.connect(('192.168.0.102', 80))
