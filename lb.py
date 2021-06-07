@@ -14,7 +14,7 @@ def main():
                     client_socket3.connect(('192.168.0.103', 80))
                     with socket.socket() as server_socket:
                         server_socket.bind(('10.0.0.0', 80))
-                        server_socket(5)
+                        server_socket.listen(5)
                         connection_socket, connection_address = server_socket.accept()
                         message = connection_socket.recv(2)
                         client_socket1.send(message)
@@ -32,3 +32,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
