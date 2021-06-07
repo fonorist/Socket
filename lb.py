@@ -24,7 +24,7 @@ def main():
                         client_socket1.send(message)
                         answer = client_socket1.recv(1024)
                         print(answer)
-                        server_socket.send(answer)
+                        connection_socket.send(answer)
                     # message_to_send = 'M1'
                     # client_socket1.send(message_to_send.encode())
     except Exception as e:
