@@ -1,4 +1,6 @@
+import os
 import socket
+import sys
 
 
 def main():
@@ -14,14 +16,16 @@ def main():
                         server_socket.bind(('10.0.0.0', 80))
                         server_socket(5)
                         connection_socket, connection_address = server_socket.accept()
-                        message = connection_socket.recv(1024)
+                        message = connection_socket.recv(2)
                         client_socket1.send(message)
-                        answer = client_socket1.recv(1024)
+                        answer = client_socket1.recv(2)
                         server_socket.send(answer)
-                    #message_to_send = 'M1'
-                    #client_socket1.send(message_to_send.encode())
-    except Exception as error:
-        print(error)
+                    # message_to_send = 'M1'
+                    # client_socket1.send(message_to_send.encode())
+    except Exception as e:
+        exc_type, exc_obj, exc_tb = sys.exc_info()
+        fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+        print(exc_type, fname, exc_tb.tb_lineno)
 
     print('ebana rot')
 
