@@ -16,7 +16,8 @@ def main():
                         server_socket.bind(('10.0.0.0', 80))
                         server_socket.listen(5)
                         connection_socket, connection_address = server_socket.accept()
-                        print(f'connection_socket = {connection_socket}, connection_address = {connection_address}')
+                        print(connection_socket)
+                        print(connection_address)
                         message = connection_socket.recv(1024)
                         client_socket1.send(message)
                         answer = client_socket1.recv(1024)
@@ -33,4 +34,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
