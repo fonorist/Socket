@@ -1,3 +1,8 @@
+import os
+import socket
+import sys
+
+
 def main():
     print("dssdfsf")
     try:
@@ -25,4 +30,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
