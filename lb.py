@@ -20,6 +20,7 @@ def main():
                 answer = client_socket1.recv(1024)
                 print(answer)
                 connection_socket.send(answer)
+                connection_socket.close()
     except Exception as e:
         exc_type, exc_obj, exc_tb = sys.exc_info()
         fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
@@ -30,6 +31,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
 
