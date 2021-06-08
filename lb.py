@@ -1,8 +1,3 @@
-import os
-import socket
-import sys
-
-
 def main():
     print("dssdfsf")
     try:
@@ -26,10 +21,6 @@ def main():
         print(exc_type, fname, exc_tb.tb_lineno)
 
     print('ebana rot')
-
-
-if __name__ == '__main__':
-    main()
 
 
 if __name__ == '__main__':
